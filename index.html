@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PSYC 2021 Syllabus</title>
+<meta name="description" content="Course syllabus for PSYC 2021 Statistical Methods I, York University, Winter 2026. Course Director: Dr. Naomi Martinez Gutierrez.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+  :root {
+    --bg: #f6f7f7; --panel: #ffffff; --fg: #1d2326; --muted: #5d676c; --line: #dfe3e4;
+    --track: #e9eeee; --accent: #1f6f78; --accent-soft: #d5e8ea; --warm: #b4572f; --warm-soft: #f6e4da;
+    --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+    --sans: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg: #121617; --panel: #1a2022; --fg: #e8eced; --muted: #9aa5a9; --line: #2c3437; --track: #263033; --accent: #5fb3bc; --accent-soft: #1f3a3d; --warm: #e0916b; --warm-soft: #3a2a22; color-scheme: dark; }
+  }
+  :root[data-theme="dark"] { --bg: #121617; --panel: #1a2022; --fg: #e8eced; --muted: #9aa5a9; --line: #2c3437; --track: #263033; --accent: #5fb3bc; --accent-soft: #1f3a3d; --warm: #e0916b; --warm-soft: #3a2a22; color-scheme: dark; }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 16px; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 17px; line-height: 1.55; }
+  a { color: var(--accent); text-underline-offset: 2px; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 40px 16px 64px; display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 48px; }
+  header.top { grid-column: 1 / -1; display: flex; flex-direction: column; gap: 6px; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+  .eyebrow { margin: 0; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  h1 { margin: 0; font-family: var(--serif); font-weight: 400; font-size: clamp(32px, 4.4vw, 46px); line-height: 1.12; text-wrap: balance; }
+  .sub { margin: 0; color: var(--muted); font-size: 15px; }
+  .taught { margin: 10px 0 0; font-size: 16px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+  .taught b { font-weight: 600; }
+  .pdf { display: inline-flex; align-items: center; gap: 6px; font-size: 14.5px; font-weight: 600; padding: 4px 12px; border: 1px solid var(--accent); border-radius: 999px; text-decoration: none; }
+  .pdf::before { content: "PDF"; font-size: 10.5px; letter-spacing: .05em; background: var(--accent); color: var(--panel); border-radius: 3px; padding: 1px 4px; }
+  .pdf:hover { background: var(--accent-soft); }
+  .welcome { margin: 18px 0 0; max-width: 78ch; background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 16px 20px; font-family: var(--serif); font-size: 18px; line-height: 1.55; }
+  .welcome b { font-family: var(--sans); font-weight: 600; font-size: 16px; display: block; margin-bottom: 4px; }
+  .why { position: relative; max-width: 72ch; margin: 12px 0; padding: 10px 14px 10px 14px; background: var(--accent-soft); border-radius: 8px; font-size: 15.5px; line-height: 1.5; }
+  .why-tag { display: inline-block; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; font-weight: 700; color: var(--panel); background: var(--accent); border-radius: 3px; padding: 1px 6px; margin-right: 8px; vertical-align: 1px; }
+  .card .why { margin: 10px 0 0; }
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr)); gap: 12px; margin-top: 18px; }
+  .fact { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px 16px; }
+  .fact dt { font-size: 12px; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  .fact dd { margin: 2px 0 0; font-size: 15px; }
+
+  nav.toc { position: sticky; top: 20px; align-self: start; font-size: 14px; }
+  nav.toc p { margin: 0 0 8px; font-size: 12px; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  nav.toc ol { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--line); }
+  nav.toc a { display: block; padding: 5px 0 5px 14px; margin-left: -1px; border-left: 2px solid transparent; color: var(--muted); text-decoration: none; }
+  nav.toc a:hover { color: var(--fg); }
+  nav.toc a.on { color: var(--fg); border-left-color: var(--accent); font-weight: 600; }
+
+  main { min-width: 0; display: flex; flex-direction: column; gap: 52px; }
+  section > h2 { margin: 0 0 14px; font-family: var(--serif); font-weight: 400; font-size: 28px; line-height: 1.2; }
+  h3 { margin: 22px 0 8px; font-size: 18px; font-weight: 600; }
+  p { margin: 0 0 12px; max-width: 72ch; }
+  .lede { font-size: 19px; max-width: 66ch; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 20px 22px; }
+  .callout { border-left: 3px solid var(--accent); background: var(--accent-soft); border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 14px 0; max-width: 72ch; }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout b { font-weight: 600; }
+
+  .outcomes { counter-reset: o; list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 12px; }
+  .outcomes li { counter-increment: o; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px 18px; }
+  .outcomes li::before { content: counter(o); display: block; font-family: var(--serif); font-size: 30px; color: var(--accent); line-height: 1; margin-bottom: 6px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 8px 0 0; list-style: none; }
+  .chips li { font-size: 14.5px; padding: 5px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel); }
+
+  .weights { display: flex; height: 38px; border-radius: 6px; overflow: hidden; margin: 6px 0 4px; border: 1px solid var(--line); }
+  .weights span { display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: #fff; white-space: nowrap; overflow: hidden; border-right: 2px solid var(--panel); }
+  .weights span:last-child { border-right: 0; }
+  .w-test { background: var(--accent); }
+  .w-asg { background: var(--warm); }
+  .w-eng { background: #7c8a8f; }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; color: var(--muted); margin-bottom: 14px; }
+  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: 0; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 15.5px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-size: 12.5px; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  tfoot td { font-weight: 600; border-bottom: 0; }
+  .tablewrap { overflow-x: auto; }
+
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 14px; }
+  .grid2 .card h3 { margin-top: 0; }
+  .grid2 .card p:last-child, .grid2 .card ul:last-child { margin-bottom: 0; }
+  ul { margin: 0 0 12px; padding-left: 20px; max-width: 70ch; }
+  li { margin: 3px 0; }
+
+  .sched { list-style: none; margin: 0; padding: 0; position: relative; }
+  .sched::before { content: ""; position: absolute; left: 103px; top: 6px; bottom: 6px; width: 2px; background: var(--line); }
+  .wk { display: grid; grid-template-columns: 80px 26px minmax(0, 1fr); gap: 0 12px; padding: 10px 0; align-items: start; }
+  .wk .d { text-align: right; font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 2px; }
+  .wk .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--panel); border: 2px solid var(--accent); margin: 6px 0 0 6px; position: relative; z-index: 1; }
+  .wk .t { font-weight: 600; }
+  .wk .r { font-size: 14.5px; color: var(--muted); }
+  .tag { display: inline-block; font-size: 12.5px; font-weight: 600; padding: 1px 8px; border-radius: 4px; margin: 4px 6px 0 0; }
+  .tag.due { background: var(--warm-soft); color: var(--warm); }
+  .tag.out { background: var(--accent-soft); color: var(--accent); }
+  .wk.test .dot { background: var(--accent); }
+  .wk.test .t { color: var(--accent); }
+  .wk.off .dot { border-color: var(--line); }
+  .wk.off .t { color: var(--muted); font-weight: 500; }
+  .fine { font-size: 14px; color: var(--muted); }
+  footer { grid-column: 1 / -1; border-top: 1px solid var(--line); padding-top: 18px; font-size: 14px; color: var(--muted); }
+
+  @media (max-width: 820px) {
+    .wrap { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+    nav.toc { display: none; }
+    .sched::before { left: 85px; }
+    .wk { grid-template-columns: 62px 26px minmax(0, 1fr); }
+  }
+  @media print {
+    nav.toc { display: none; }
+    .wrap { grid-template-columns: 1fr; }
+    body { background: #fff; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <p class="eyebrow">Course syllabus · York University · Faculty of Health · Department of Psychology</p>
+    <h1>PSYC 2021 3.0 N: Statistical Methods I</h1>
+    <p class="sub">Dr. Naomi Martinez Gutierrez</p>
+    <p class="taught"><span>I designed and taught this course as <b>Course Director</b> in <b>Winter 2026</b>.</span> <a class="pdf" href="PSYC2021_Course_Outline_WI26.pdf">Official course outline (PDF)</a></p>
+    <div class="welcome"><b>A note before we begin</b>Many students come to statistics with some dread. If that’s you, you’re in good company. Statistics is the language psychology uses to make its claims, and increasingly the language of news headlines, health advice, etc.; and the AI tools you use every day. My goal is for you to leave this course able to analyze real data and question the statistics you encounter, and to feel more confident doing it than you do today. We’ll start from where you are.</div>
+    <dl class="facts">
+      <div class="fact"><dt>Class</dt><dd>Mondays, 2:30–5:30 pm<br>Accolade East 102</dd></div>
+      <div class="fact"><dt>Format</dt><dd>In person, with pre-recorded lectures</dd></div>
+      <div class="fact"><dt>Software</dt><dd><a href="https://www.r-project.org">R</a> (free, open source)</dd></div>
+      <div class="fact"><dt>Textbook</dt><dd>Open access (free)</dd></div>
+      <div class="fact"><dt>Office hours</dt><dd>By appointment, in person or on Zoom</dd></div>
+    </dl>
+  </header>
+
+  <nav class="toc" aria-label="Sections">
+    <p>On this page</p>
+    <ol>
+      <li><a href="#about">About the course</a></li>
+      <li><a href="#outcomes">Learning outcomes</a></li>
+      <li><a href="#format">How the class works</a></li>
+      <li><a href="#assessment">Assessment</a></li>
+      <li><a href="#ai">Generative AI</a></li>
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#policies">Course policies</a></li>
+      <li><a href="#support">Support</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <section id="about">
+      <h2>About the course</h2>
+      <p class="lede">This is the first statistics course most psychology majors take in university. It introduces the basic principles behind statistical analyses in psychological research and prepares you for more advanced courses.</p>
+      <p>We cover the types of variables used in psychological research, statistical and graphical ways to summarize them, two-variable correlation, and comparing means. Null hypothesis significance testing (NHST) is introduced, but the focus is on understanding relationships among variables, including effect sizes and confidence intervals. You will analyze data in the open-source software <a href="https://www.r-project.org">R</a>.</p>
+      <p class="why"><span class="why-tag">Why</span>Psychology increasingly asks how large and meaningful an effect is, not just whether it’s statistically significant. You’ll learn both, and why the difference matters.</p>
+      <p class="why"><span class="why-tag">Why</span>R is free, and it’s a skill valued in graduate programs, industry, and government. It’s worth putting on your résumé.</p>
+      <div class="grid2">
+        <div class="card">
+          <h3>Required text (free)</h3>
+          <p>Cote, L. R., Gordon, R. G., Randell, C. E., Schmitt, J., &amp; Marvin, H. <i>Introduction to statistics in the psychological sciences.</i> Open Textbook Library.</p>
+          <p class="why"><span class="why-tag">Why</span>I assign free materials so cost never determines who can keep up.</p>
+        </div>
+        <div class="card">
+          <h3>Prerequisite and exclusions</h3>
+          <p>Prerequisite: HH/PSYC 1010 6.00 (Introduction to Psychology).</p>
+          <p class="fine">Credit exclusions: HH/PSYC 2020 6.00, SC/BIOL 2060 3.00, HH/KINE 2050 3.00, SC/MATH 2500 3.00, SC/MATH 2560 3.00.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="outcomes">
+      <h2>Learning outcomes</h2>
+      <p>By the end of the course, you should be able to:</p>
+      <ol class="outcomes">
+        <li>Compute descriptive and inferential statistics.</li>
+        <li>Interpret and report the results of descriptive and inferential statistics.</li>
+        <li>Distinguish between the roles of descriptive and inferential statistics.</li>
+      </ol>
+      <h3>Topics</h3>
+      <ul class="chips">
+        <li>Key statistical terms</li><li>Frequency distributions</li><li>Central tendency</li><li>Variability</li>
+        <li><i>z</i>-scores and the normal distribution</li><li>Probability</li><li>Sampling distributions</li>
+        <li>Confidence intervals</li><li>Power</li><li>Effect sizes</li><li>Correlation (Pearson and alternatives)</li>
+        <li>Hypothesis testing: independent and dependent designs</li><li>One-sample and two-sample <i>t</i>-tests</li>
+        <li><i>χ</i>² goodness of fit</li><li><i>χ</i>² test of independence</li>
+      </ul>
+      <p class="fine" style="margin-top:10px">Effect sizes are taught alongside every inferential test in the course.</p>
+    </section>
+
+    <section id="format">
+      <h2>How the class works</h2>
+      <p>The course combines asynchronous and in-person components. Before each class, you read the assigned chapter(s) and watch the matching pre-recorded lecture on eClass. Class time is then spent applying what you learned: brief lecture, live polling, and learning activities done by hand calculation and coding in R, with support and feedback from the instructor and teaching assistant.</p>
+      <div class="grid2">
+        <div class="card">
+          <h3>Before class</h3>
+          <ul><li>Read the assigned chapter(s)</li><li>Watch the pre-recorded lecture on eClass</li></ul>
+        </div>
+        <div class="card">
+          <h3>In class</h3>
+          <ul><li>Answer live Vevox polls</li><li>Work through hand calculations and R activities</li><li>Get feedback in the moment from the instructor and TA</li></ul>
+        </div>
+      </div>
+      <p style="margin-top:14px">If you miss a class, review that week's material and activities on your own so you get the same learning experience. All course materials and announcements are on <a href="https://eclass.yorku.ca/eclass/">eClass</a>. A laptop or phone is helpful in class for the activities.</p>
+      <p class="why"><span class="why-tag">Why</span>Watching lectures on your own time means class can focus on understanding rather than keeping up: working through problems and getting feedback while you’re stuck, not after.</p>
+      <p class="why"><span class="why-tag">Why</span>Vevox responses are anonymous, so you can commit to an answer without worrying about being wrong in front of others. The class results show me right away which ideas need another look.</p>
+    </section>
+
+    <section id="assessment">
+      <h2>Assessment</h2>
+      <div class="weights" role="img" aria-label="Grade weights: tests 70 percent, assignments 26 percent, engagement 4 percent">
+        <span class="w-test" style="flex:20">Test 1 · 20%</span>
+        <span class="w-test" style="flex:25">Test 2 · 25%</span>
+        <span class="w-test" style="flex:25">Test 3 · 25%</span>
+        <span class="w-asg" style="flex:13">A1 · 13%</span>
+        <span class="w-asg" style="flex:13">A2 · 13%</span>
+        <span class="w-eng" style="flex:4" title="Engagement 4%"></span>
+      </div>
+      <div class="legend"><span><i class="w-test"></i>Tests 70%</span><span><i class="w-asg"></i>Assignments 26%</span><span><i class="w-eng"></i>Engagement 4%</span></div>
+      <div class="tablewrap">
+      <table>
+        <thead><tr><th>Assessment</th><th>Date</th><th class="num">Weight</th></tr></thead>
+        <tbody>
+          <tr><td>Engagement points</td><td>Weekly</td><td class="num">4%</td></tr>
+          <tr><td>Test 1</td><td>February 9</td><td class="num">20%</td></tr>
+          <tr><td>Assignment 1</td><td>March 2</td><td class="num">13%</td></tr>
+          <tr><td>Test 2</td><td>March 16</td><td class="num">25%</td></tr>
+          <tr><td>Assignment 2</td><td>March 30</td><td class="num">13%</td></tr>
+          <tr><td>Test 3 (cumulative)</td><td>April 23 (exam period)</td><td class="num">25%</td></tr>
+        </tbody>
+        <tfoot><tr><td>Total</td><td></td><td class="num">100%</td></tr></tfoot>
+      </table>
+      </div>
+
+      <h3>Tests</h3>
+      <p>Tests draw on the textbook, lectures and recordings, and include theory, application, and interpreting R input and output. You will <b>not</b> need to write R code on tests. A basic or scientific calculator is allowed (not a phone or tablet).</p>
+      <ul>
+        <li><b>Test 1:</b> research design, descriptive statistics, visualizing data, sampling/estimation and probability (Ch. 1–5)</li>
+        <li><b>Test 2:</b> hypothesis testing and comparing means (Ch. 6–10)</li>
+        <li><b>Test 3:</b> cumulative, with a focus on correlations and frequency analysis (Ch. 12 and 14)</li>
+      </ul>
+
+      <h3>Assignments</h3>
+      <p>Two assignments ask you to analyze a dataset in R and write up the results. Each is handed out one week before it is due.</p>
+      <p class="why"><span class="why-tag">Why</span>Each assignment asks you to apply what you’ve learned to a new problem, the way researchers do, and ends with a short reflection on what you did.</p>
+
+      <h3>Engagement points</h3>
+      <p>You earn engagement points by answering the in-class Vevox polls each week.</p>
+      <div class="callout"><p><b>Two freebies.</b> Everyone can miss two classes' worth of engagement points with no grade penalty, no questions asked. Because this flexibility is built in, other missed engagement points are excused only in truly exceptional circumstances.</p></div>
+      <p class="why"><span class="why-tag">Why</span>Life happens: work, caregiving, illness. The two freebies mean you never have to explain your circumstances or lose marks for missing a class.</p>
+    </section>
+
+    <section id="ai">
+      <h2>Generative AI</h2>
+      <p>Generative AI is <b>permitted</b> on assignments, with parameters. If you use AI, you must:</p>
+      <ul>
+        <li>fact-check all AI output;</li>
+        <li>critically evaluate AI-generated content and integrate it properly with your own ideas;</li>
+        <li>attach a reflection (minimum 150 words) stating which tool you used, how you used it (e.g., generating ideas, explaining concepts, summarizing), and what it could and could not help you with.</li>
+      </ul>
+      <p class="why"><span class="why-tag">Why</span>AI is becoming part of how research and professional work get done, so rather than ban it, I want you to learn to use it well: check what it gives you, and notice what it can’t do. The reflection is where you practise that.</p>
+      <p>AI tools and all other electronic devices are not permitted during tests.</p>
+    </section>
+
+    <section id="schedule">
+      <h2>Schedule</h2>
+      <p class="fine">The schedule may shift slightly depending on the pace at which we cover the material.</p>
+      <ol class="sched">
+        <li class="wk"><span class="d">Jan 5</span><span class="dot"></span><div><div class="t">Introduction to the course and R</div><div class="r">No recording</div></div></li>
+        <li class="wk"><span class="d">Jan 12</span><span class="dot"></span><div><div class="t">Research design; intro to R (continued)</div><div class="r">Ch. 1 · Recording 1</div></div></li>
+        <li class="wk"><span class="d">Jan 19</span><span class="dot"></span><div><div class="t">Descriptive statistics and data visualization, part 1</div><div class="r">Ch. 2–3 · Recording 2</div></div></li>
+        <li class="wk"><span class="d">Jan 26</span><span class="dot"></span><div><div class="t">Descriptive statistics and data visualization, part 2</div><div class="r">Ch. 2–3 · Recording 3</div></div></li>
+        <li class="wk"><span class="d">Feb 2</span><span class="dot"></span><div><div class="t">Sampling/estimation and probability</div><div class="r">Ch. 4–5 · Recording 4</div></div></li>
+        <li class="wk test"><span class="d">Feb 9</span><span class="dot"></span><div><div class="t">Test 1</div><div class="r">Chapters 1–5</div></div></li>
+        <li class="wk off"><span class="d">Feb 16</span><span class="dot"></span><div><div class="t">Reading week: no class</div></div></li>
+        <li class="wk"><span class="d">Feb 23</span><span class="dot"></span><div><div class="t">Hypothesis testing</div><div class="r">Ch. 6–7 · Recording 5</div><span class="tag out">Assignment 1 handed out</span></div></li>
+        <li class="wk"><span class="d">Mar 2</span><span class="dot"></span><div><div class="t">Comparing means, part 1</div><div class="r">Ch. 8–9 · Recording 6</div><span class="tag due">Assignment 1 due</span></div></li>
+        <li class="wk"><span class="d">Mar 9</span><span class="dot"></span><div><div class="t">Comparing means, part 2</div><div class="r">Ch. 10</div></div></li>
+        <li class="wk test"><span class="d">Mar 16</span><span class="dot"></span><div><div class="t">Test 2</div><div class="r">Chapters 6–10</div></div></li>
+        <li class="wk"><span class="d">Mar 23</span><span class="dot"></span><div><div class="t">Correlations</div><div class="r">Ch. 12</div><span class="tag out">Assignment 2 handed out</span></div></li>
+        <li class="wk"><span class="d">Mar 30</span><span class="dot"></span><div><div class="t">Frequency analysis</div><div class="r">Ch. 14</div><span class="tag due">Assignment 2 due</span></div></li>
+        <li class="wk test"><span class="d">Apr 23</span><span class="dot"></span><div><div class="t">Test 3</div><div class="r">Cumulative, with a focus on chapters 12 and 14</div></div></li>
+      </ol>
+    </section>
+
+    <section id="policies">
+      <h2>Course policies</h2>
+      <div class="grid2">
+        <div class="card">
+          <h3>Missed tests</h3>
+          <p>All tests, including make-ups, are written in person. If you miss a test due to illness, email the TA within 48 hours to schedule a make-up (the format may differ). You must also complete the Psychology department's <a href="http://psychology.apps01.yorku.ca/machform/view.php?id=16179">Missed Tests/Exams Form</a>; not doing so may result in a grade of zero.</p>
+        </div>
+        <div class="card">
+          <h3>Late assignments</h3>
+          <p>Late assignments lose 10% of the assignment's value per weekday late. The Missed Tests/Exams Form also applies to late assignments.</p>
+        </div>
+        <div class="card">
+          <h3>Academic consideration</h3>
+          <p>Under York's <a href="https://www.yorku.ca/secretariat/policies/policies/academic-consideration-for-missed-course-work-policy-on/">Policy on Academic Consideration for Missed Course Work</a>, you may submit up to two self-reported absences per 12-week term through eClass, without a doctor's note, for work worth 20% or less. Each covers up to seven consecutive days. Contact me within two business days after the absence period ends.</p>
+        </div>
+        <div class="card">
+          <h3>Accessibility</h3>
+          <p>Students with disabilities are encouraged to register with <a href="https://accessibility.students.yorku.ca/">Student Accessibility Services</a> as early as possible. Please also let me know early in the term if you anticipate needing accommodation, so we can plan how to meet your needs within the course.</p>
+        </div>
+        <div class="card">
+          <h3>Academic integrity</h3>
+          <p>All submitted work must be your own. Sharing test answers (including in group chats such as Discord or WhatsApp), posting test questions to homework-help sites, contract cheating, unauthorized collaboration, and buying or selling test banks are breaches of York's <a href="https://www.yorku.ca/secretariat/policies/policies/academic-conduct-policy-and-procedures/">Academic Conduct Policy</a>. If you're unsure whether something is allowed, ask me or the TA.</p>
+        </div>
+        <div class="card">
+          <h3>Devices during tests</h3>
+          <p>No electronic devices except a basic or scientific calculator. Phones must be turned off and stored in your bag under your chair.</p>
+        </div>
+        <div class="card">
+          <h3>Grading</h3>
+          <p>Grades follow York's 9-point <a href="https://calendars.students.yorku.ca/2025-2026/grades-and-grading-schemes">grading system</a> (e.g., A+ = 90–100, A = 80–89, B+ = 75–79).</p>
+        </div>
+        <div class="card">
+          <h3>Key Winter dates</h3>
+          <ul>
+            <li>Jan 15: last day to add without permission</li>
+            <li>Jan 26: last day to add with permission</li>
+            <li>Mar 9: last day to drop without a grade</li>
+            <li>Mar 10 – Apr 6: withdrawal period (“W” on transcript)</li>
+          </ul>
+        </div>
+      </div>
+      <p class="fine" style="margin-top:14px">Course materials are the property of the instructor unless otherwise stated and may not be redistributed (see York's <a href="http://copyright.info.yorku.ca/students-reuse-of-teaching-materials-from-york-courses/">Intellectual Property Rights Statement</a>).</p>
+    </section>
+
+    <section id="support">
+      <h2>Support</h2>
+      <p>If you're struggling with course material, reach out to me or the TA. York also offers free support:</p>
+      <ul>
+        <li><a href="https://www.yorku.ca/colleges/ccsc/peer-assisted-study-sessions-p-a-s-s/">Peer-Assisted Study Sessions (PASS)</a> and <a href="https://www.yorku.ca/colleges/ccsc/peer-tutoring/">Peer Tutoring</a> through Calumet and Stong Colleges</li>
+        <li><a href="https://www.yorku.ca/colleges/ccsc/mentoring/">Peer Mentoring</a> for first-year and transfer students</li>
+        <li><a href="https://eclass.yorku.ca/course/view.php?id=130465">Health Empowering Academic Resilience (HEAR)</a>, self-paced online workshops</li>
+        <li><a href="https://www.yorku.ca/laps/writing-centre/">Writing Centre</a> and <a href="https://www.library.yorku.ca/web/ask-services/">York Libraries</a></li>
+        <li><a href="https://www.yorku.ca/unit/vpacad/academic-integrity/student-resources/">Academic integrity resources</a></li>
+        <li><a href="https://www.yorku.ca/colleges/ccsc/resources/">More student supports at York</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>PSYC 2021 3.0 N · taught Winter 2026 · Course Director: Dr. Naomi Martinez Gutierrez · Department of Psychology, York University · <a href="PSYC2021_Course_Outline_WI26.pdf">Official course outline (PDF)</a></footer>
+</div>
+<script>
+  // Highlight the current section in the side navigation.
+  const links = [...document.querySelectorAll('nav.toc a')];
+  const secs = links.map(a => document.querySelector(a.getAttribute('href')));
+  function mark() {
+    let cur = secs[0];
+    for (const s of secs) if (s.getBoundingClientRect().top < 140) cur = s;
+    links.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + cur.id));
+  }
+  addEventListener('scroll', mark, { passive: true }); mark();
+</script>
+</body>
+</html>
